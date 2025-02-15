@@ -1,0 +1,51 @@
+:root {
+    --dogwood-pink: #d9b2a9;
+    --main-green: #a5a68f;
+    --main-yellow: #faf4e3;
+    --rose-pink: #f2dbd5;
+    --secondary-gray: #b7bcbf;
+    --light-pink: #f4eeed;
+}
+
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 69px;
+    width: 100%;
+    z-index: 5;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    height: 69px;
+    border-bottom: 1px solid var(--main-green);
+}
+
+.logo {
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+    img {
+        height: 50px;
+        width: auto;
+    }
+}
+
+.menu ul {
+    display: flex;
+    list-style: none;
+    flex-direction: row;
+    justify-content: space-around;
+    width: max-content;
+}
+
+.menu li {
+    display: inline;
+    margin: auto 0.5rem;
+}
+
+.menu a {
+    color: seashell;
+}
