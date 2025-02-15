@@ -47,5 +47,5 @@
 }
 
 .menu a {
-    color: seashell;
+    color: var(--main-green);
 }
