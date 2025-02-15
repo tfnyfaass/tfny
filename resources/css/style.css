@@ -7,33 +7,44 @@
     --light-pink: #f4eeed;
 }
 
+.body {
+    font-family:Arial, Helvetica, sans-serif
+}
+
 
 .header {
     position: fixed;
-    top: 0;
+    top: 10;
     left: 0;
+    right: 20;
     height: 69px;
     width: 100%;
     z-index: 5;
     display: flex;
     flex-direction: row;
+    align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
     height: 69px;
-    border-bottom: 1px solid var(--main-green);
 }
 
 .logo {
     padding-left: 10px;
-    display: flex;
     align-items: center;
     img {
-        height: 50px;
+        height: 120px;
         width: auto;
-    }
+    };
+    display: flex;
 }
 
-.menu ul {
+.brand {
+    color: var(--main-green);
+    font-family: "Poiret One", serif;
+}
+
+.nav {
+    top: 10px;
     display: flex;
     list-style: none;
     flex-direction: row;
@@ -41,11 +52,21 @@
     width: max-content;
 }
 
-.menu li {
+.nav li {
     display: inline;
     margin: auto 0.5rem;
+    font-family: "DynaPuff", serif;
 }
 
-.menu a {
+.nav a {
+    color: var(--main-green);
+    text-decoration: none;
+}
+
+.nav a:hover{
+    color: var(--dogwood-pink);
+}
+
+.brand-message {
     color: var(--main-green);
 }
