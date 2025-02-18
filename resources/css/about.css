@@ -14,7 +14,6 @@
     align-items: center;
     font-family: "Roboto", serif;
     font-weight: 300;
-    
 }
 
 .intro {
@@ -24,9 +23,12 @@
 }
 
 .intro img {
-    width: 450px;
+    width: 100%;
+    max-width: 450px;
     height: auto;
-    margin-right: 20px;
+    max-height: 500px;
+    margin-left: 40px;
+    margin-right: 50px;
 }
 
 .about-me {
@@ -57,7 +59,9 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
+    margin-top: -10px;
     gap: 0.8rem;
+    row-gap: 0.02rem;
 }
 
 
@@ -67,20 +71,56 @@
     border-radius: 20px;
     border: 1px solid var(--main-green);
     font-size: 14px;
-    white-space: nowrap; 
+    white-space: nowrap;
+    display: inline-block; 
+    max-width: fit-content;
+    width: auto;
+}
+
+.more-info {
+    display: flex;
+    flex-direction: row;
+    color: var(--main-green);
+    gap: 200px;
+    align-items: flex-start;
+    margin-top: 50px;
+    margin-left: 100px;
+}
+
+.category {
+    display: flex;
+    flex-direction: column;
+    max-width: 40%;
+
+}
+
+.title {
+    font-weight: 400;
+    margin-bottom: -3px;
+}
+
+.topic h5 {
+    color: var(--dogwood-pink);
+    font-size: 16px;
+    font-weight: 300;
+    margin-bottom: 15px;
 }
 
 
 @media (max-width: 768px) {
+    .intro {
+        flex-direction: column;
+    }
+
     .toolkit p {
-        flex: 1 1 calc(100% / 3 - 10px); 
         max-width: calc(100% / 3 - 10px);
+        width: auto;
     }
 }
 
 @media (max-width: 480px) {
     .toolkit p {
-        flex: 1 1 calc(100% / 2 - 10px); 
         max-width: calc(100% / 2 - 10px);
+        width: auto;
     }
 }
