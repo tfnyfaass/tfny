@@ -14,66 +14,6 @@
     flex-direction: column;
 }
 
-
-.header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 20px;
-    width: 100%;
-    z-index: 5;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    height: 120px;
-    background-color: white;
-}
-
-.logo {
-    padding-left: 121px;
-    align-items: center;
-    display: flex;
-}
-
-.logo img {
-    height: 120px;
-    width: auto;
-}
-
-.brand {
-    color: var(--main-green);
-    font-family: "Poiret One", serif;
-}
-
-.nav {
-    display: flex;
-    list-style: none;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: max-content;
-    margin-right: 135px;
-}
-
-.nav li {
-    display: inline;
-    margin: auto 0.5rem;
-    font-family: "DynaPuff", serif;
-    font-weight: 200;
-    padding: 8px;
-}
-
-.nav a {
-    color: var(--main-green);
-    text-decoration: none;
-}
-
-.nav a:hover{
-    color: var(--dogwood-pink);
-}
-
 .brand-message {
     color: var(--main-green);
     display: flex;

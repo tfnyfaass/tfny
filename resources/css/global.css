@@ -54,15 +54,16 @@
     justify-content: space-between;
     align-items: center;
     width: max-content;
-    margin-right: 165px;
+    margin-right: 135px;
 }
 
 .nav li {
     display: inline;
     margin: auto 0.5rem;
-    font-family: "DynaPuff", serif;
-    font-weight: 200;
-    padding: 8px;
+    font-family: "Quicksand", serif;
+    font-weight: 700;
+    font-size: 18px;
+    padding: 6px;
 }
 
 .nav a {
