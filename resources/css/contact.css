@@ -1,5 +1,5 @@
 .title {
-    margin-top: 200px;
+    margin-top: 140px;
     text-align: center;
     font-family: "Roboto", serif;
     color: var(--main-green);
@@ -26,7 +26,7 @@ form {
 input, textarea {
     border: 2px solid rgb(244, 238, 237,0.8);
     width: 396px;
-    margin: auto;
+    margin: 10px auto;
     border-radius: 8px;
     font-family: 'Roboto', sans-serif;
     font-size: 20px;
@@ -38,7 +38,7 @@ input:focus, textarea:focus {
 }
 
 .form-input {
-    height: 61px;
+    height: 40px;
     padding-left: 1rem;
 }
 .form-input-question {
@@ -53,7 +53,7 @@ input[type="submit"] {
     border-radius: 8px;
     color: #A5A68F;
     cursor: pointer;
-    margin: auto;
+    margin: 10px auto;
     display: block;
     border: none;
     font-family: 'Roboto Medium', sans-serif;
