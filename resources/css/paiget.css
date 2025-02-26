@@ -1,0 +1,10 @@
+.main {
+    font-family: "Roboto", serif;;
+}
+
+
+.project-title {
+    color: var(--main-green);
+    width: 1000px;
+    margin-top: 30px;
+}
