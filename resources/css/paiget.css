@@ -1,10 +1,69 @@
 .main {
-    font-family: "Roboto", serif;;
+    font-family: "Roboto", serif;
+    width: 1145px;
+    color: var(--main-green);
 }
 
 
 .project-title {
     color: var(--main-green);
-    width: 1000px;
+    width: 1145px;
+    height: auto;
     margin-top: 30px;
+    margin-left: 150px;
+    border-bottom: 1px solid var(--main-green);
+    display: block;
+}
+
+.project-title h3,
+.project-title p {
+    margin: 10px;
+    padding: 0;
+}
+
+.project-title h3 {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.project-banner {
+    width: 1145px;
+    display: flex;
+    flex-direction: row;
+    margin-top: 30px;
+    align-items: center;
+    margin-left: 150px;
+}
+
+.project-banner img {
+    width: 700px;
+    max-height: 350px; 
+    object-fit: cover; 
+    margin-right: 50px;
+}
+
+.project-details {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; 
+}
+
+.detail-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.detail-title, .detail-info {
+    margin: 0;
+    padding: 0;
+}
+
+.detail-title {
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.detail-info {
+    font-size: 16px;
 }
