@@ -1,8 +1,8 @@
 :root {
-    --dogwood-pink: #d9b2a9;
+    --main-pink: #d9b2a9;
     --main-green: #a5a68f;
     --main-yellow: #faf4e3;
-    --rose-pink: #f2dbd5;
+    --secondary-pink: #f2dbd5;
     --secondary-gray: #b7bcbf;
     --light-pink: #f4eeed;
 }
@@ -72,7 +72,7 @@
 }
 
 .nav a:hover{
-    color: var(--dogwood-pink);
+    color: var(--main-pink);
 }
 
 .brand-message {
@@ -87,7 +87,7 @@
 }
 
 .hello {
-    color: var(--dogwood-pink);
+    color: var(--main-pink);
 }
 
 .self-description {

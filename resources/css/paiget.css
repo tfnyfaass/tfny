@@ -256,3 +256,29 @@ section {
 .final-iteration img {
     align-items: center;
 }
+
+.reflection-points {
+    max-width: 1145px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: var(--light-pink);
+    padding: 30px 40px;
+}
+
+footer {
+    font-family: "Roboto", serif;
+    width: 1145px;
+    color: var(--main-green);
+    margin: 100px auto;
+    text-align: center;
+}
+
+footer a {
+    text-decoration: none;
+    color: var(--main-pink);
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
