@@ -126,11 +126,11 @@
     display: flex;
 }
 
- 
+/*
 body.scrolled .mobile-nav {
     display: none;
 }
-
+*/
 
 @media screen and (max-width: 1200px) {
     .header {
