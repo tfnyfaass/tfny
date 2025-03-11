@@ -89,14 +89,15 @@
 .more-info::before {
     content: ''; 
     position: absolute;
-    top: 10rem; 
     right: -10rem;
+    bottom: -5rem;
     align-self: flex-end;
     background-image: url('/resources/images/about/bloom.png');
     background-repeat: no-repeat;
     background-size: contain;
     height: 450px;
     width: 450px;
+    opacity: 0.6;
     z-index: -3;
 }
 
