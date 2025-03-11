@@ -106,6 +106,7 @@
     padding: 10px;
     z-index: 999;
     align-items: center;  
+    text-align: center;
     justify-content: space-around;
     list-style: none;
     top: 120px;
@@ -120,6 +121,10 @@
     padding: 10px 0;
     transition: color 0.3s ease;
     text-decoration: none;
+}
+
+.mobile-nav a:hover {
+    color: var(--main-pink);
 }
 
 .mobile-nav.active {
