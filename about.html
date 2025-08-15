@@ -1,75 +1,458 @@
+
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="./resources/css/global.css">
-        <link rel="stylesheet" href="./resources/css/about.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&family=Funnel+Sans:ital,wght@0,300..800;1,300..800&family=Loved+by+the+King&family=Poiret+One&family=Quicksand:wght@300..700&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-        <title>tfny</title>
-        <link rel="icon" type="image/icon" href="resources/images/Favicon.png">
-    </head>
-    <body>
-        <div class="header">
-            <div class="logo">
-              <a href="index.html"><img src="resources/images/TFLogo.png"></a>
-              <p class="brand">Minimalistic UX Designs</p>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiffany Faass - UX Designer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Bowlby+One&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --purple: #4723A4;
+            --lime: #C2D039;
+            --brown: #372A2A;
+            --cream: #F5F4E3;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--cream);
+            font-family: 'Anonymous Pro', monospace;
+            line-height: 1.4;
+            color: var(--brown);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding: 15px 25px;
+            background: var(--white);
+            border-radius: 25px;
+            border: 2px solid var(--brown);
+        }
+
+        .logo {
+            font-family: 'Anonymous Pro', monospace;
+            font-size: 18px;
+            font-weight: 400;
+            color: var(--brown);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            font-style: italic;
+        }
+
+        .nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav a {
+            font-family: 'Anonymous Pro', monospace;
+            font-size: 14px;
+            color: var(--brown);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: color 0.3s ease;
+        }
+
+        .nav a:hover {
+            color: var(--purple);
+        }
+
+        /* Grid Layout */
+        .grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 2fr 2fr;
+            grid-template-rows: auto auto;
+            gap: 20px;
+            height: calc(100vh - 150px);
+            min-height: 600px;
+        }
+
+        /* Card Base Styles */
+        .card {
+            border-radius: 20px;
+            padding: 25px;
+            border: 2px solid var(--brown);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Remove border for image cards */
+        .card.no-border {
+            border: none;
+            padding: 0;
+        }
+
+        /* Hero Card */
+        .hero-card {
+            background: var(--purple);
+            color: var(--white);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            grid-column: 1 / 4;
+        }
+
+        .hero-card h1 {
+            font-family: 'Bowlby One', cursive;
+            font-size: 36px;
+            line-height: 0.9;
+            margin-bottom: 15px;
+        }
+
+        .hero-card .subtitle {
+            font-family: 'Bowlby One', cursive;
+            font-size: 24px;
+            line-height: 0.9;
+            margin-bottom: 10px;
+        }
+
+        .hero-card .highlight {
+            color: var(--lime);
+        }
+
+        .hero-card .decorative-flower {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            width: 80px;
+            height: 80px;
+            opacity: 0.3;
+        }
+
+        /* Photo Card */
+        .photo-card {
+            background: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            grid-column: 4 / 5;
+        }
+
+        .photo-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+
+        /* Skills Card */
+        .skills-card {
+            background: var(--white);
+            grid-column: 5 / 6;
+        }
+
+        .skills-card h2 {
+            font-family: 'Anonymous Pro', monospace;
+            font-size: 18px;
+            color: var(--purple);
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .skills-list {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* Activities Card */
+        .activities-card {
+            background: var(--white);
+            font-size: 14px;
+            grid-column: 1 / 3;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            align-items: end;
+        }
+
+        .activities-card h3 {
+            font-family: 'Anonymous Pro', monospace;
+            font-size: 18px;
+            color: var(--purple);
+            font-weight: 700;
+            align-self: end;
+        }
+
+        .activities-content {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .activity-text {
+            line-height: 1.5;
+        }
+
+        /* Contact Card */
+        .contact-card {
+            background: var(--lime);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            grid-column: 3 / 5;
+        }
+
+        .contact-card .contact-text {
+            font-size: 14px;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        .contact-card h2 {
+            font-family: 'Bowlby One', cursive;
+            font-size: 36px;
+            color: var(--brown);
+            line-height: 0.9;
+            margin: 20px 0;
+        }
+
+        .contact-card .arrow {
+            position: absolute;
+            bottom: 25px;
+            right: 25px;
+            width: 30px;
+            height: 30px;
+        }
+
+        /* Sports Card */
+        .sports-card {
+            background: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            grid-column: 5;
+        }
+
+        .sports-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+
+        /* Placeholder for images */
+        .image-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #e0e0e0, #f0f0f0);
+            border-radius: 20px;
+            color: #999;
+            font-size: 14px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+
+            .nav {
+                justify-content: center;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+                grid-template-rows: repeat(6, auto);
+                gap: 15px;
+                height: auto;
+            }
+
+            .hero-card,
+            .photo-card,
+            .skills-card,
+            .activities-card,
+            .contact-card,
+            .sports-card {
+                grid-column: 1;
+            }
+
+            .activities-card {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .activities-card h3 {
+                align-self: start;
+            }
+
+            .hero-card h1 {
+                font-size: 28px;
+            }
+
+            .hero-card .subtitle {
+                font-size: 20px;
+            }
+
+            .contact-card h2 {
+                font-size: 28px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 15px;
+            }
+
+            .card {
+                padding: 20px;
+            }
+
+            .card.no-border {
+                padding: 0;
+            }
+
+            .hero-card h1 {
+                font-size: 24px;
+            }
+
+            .hero-card .subtitle {
+                font-size: 18px;
+            }
+        }
+
+        /* Hover Effects */
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(71, 35, 164, 0.15);
+        }
+
+        .contact-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(194, 208, 57, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo"><span>Tiffany</span> Faass</div>
+            <nav class="nav">
+                <a href="#projects">Projects</a>
+                <a href="#about">About</a>
+                <a href="#resume">Resume</a>
+            </nav>
+        </header>
+
+        <main class="grid">
+            <!-- Hero Card -->
+            <div class="card hero-card">
+                <div class="decorative-flower">
+                    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g stroke="currentColor" stroke-width="1" fill="none">
+                            <!-- Flower petals -->
+                            <ellipse cx="50" cy="25" rx="8" ry="20" transform="rotate(0 50 50)"/>
+                            <ellipse cx="50" cy="25" rx="8" ry="20" transform="rotate(45 50 50)"/>
+                            <ellipse cx="50" cy="25" rx="8" ry="20" transform="rotate(90 50 50)"/>
+                            <ellipse cx="50" cy="25" rx="8" ry="20" transform="rotate(135 50 50)"/>
+                            <ellipse cx="50" cy="25" rx="8" ry="20" transform="rotate(180 50 50)"/>
+                            <ellipse cx="50" cy="25" rx="8" ry="20" transform="rotate(225 50 50)"/>
+                            <ellipse cx="50" cy="25" rx="8" ry="20" transform="rotate(270 50 50)"/>
+                            <ellipse cx="50" cy="25" rx="8" ry="20" transform="rotate(315 50 50)"/>
+                            <circle cx="50" cy="50" r="8"/>
+                        </g>
+                    </svg>
+                </div>
+                <h1>I'm a UX<br>designer</h1>
+                <div class="subtitle">who's into</div>
+                <div class="subtitle"><span class="highlight">art,<br>learning,</span></div>
+                <div class="subtitle">...and ambitious<br><span class="highlight">yoga</span> schedules</div>
             </div>
-            <ul class="nav">
-              <li><a href="services.html">Services</a></li>
-              <li><a href="about.html">About</a></li>
-              <li><a href="contact.html">Contact</a></li>
-            </ul>
-          </div>
-        <div class="main">
-            <div class="intro">
-                <img class="profile-pic" src="resources/images/about/TFPortfolio3.png">
-                <div class="about-me">
-                    <div class="intro-message">
-                        <h3>Hi there!</h3>
-                        <h3>Nice to meet you.</h3>
-                        <p class="welcome">Welcome to my world, where psychology meets design and creativity sparks innovation.</p>
-                        <p>My journey began with a fascination for endocrinology and behavior in school, leading me down the rabbit hole of user experience and design. With a Google UX Design Certificate, the pursuit of a full-stack developer certificate from Codecademy, and a deep-seated passion for bringing ideas to life, I've found my niche in this vast, dynamic field of UX design.</p>
-                        <p>From my enriching experiences working at the Faculty of Medicine at UBC, UBC HR, to startups, I've reveled in the art of merging aesthetic design with practical functionality through instructional design, UX/UI design, graphic design, and web development.</p>                        
-                        <h5>My toolkit includes:</h5>
+
+            <!-- Photo Card -->
+            <div class="card no-border photo-card">
+                <img src="resources/images/about/Tiffany.jpg" alt="Tiffany at a beautiful building">
+            </div>
+
+            <!-- Skills Card -->
+            <div class="card skills-card">
+                <h2>My skills</h2>
+                <div class="skills-list">
+                    User Research<br>
+                    Information Architecture<br>
+                    Wireframing<br>
+                    Prototyping<br>
+                    Visual Design<br>
+                    Usability Testing<br>
+                    Design Systems<br>
+                    Figma<br>
+                    Adobe Creative Suite
+                </div>
+            </div>
+
+            <!-- Activities Card -->
+            <div class="card activities-card">
+                <h3>Outside of<br>work, you'll<br>find me</h3>
+                <div class="activities-content">
+                    <div class="activity-text">
+                        rushing to the 9am<br>
+                        yoga or pilates class<br>
+                        I ambitiously booked<br>
+                        the night before
                     </div>
-                    <div class="toolkit">
-                        <p>#Canvas</p><p>#Articulate</p><p>#Camtasia</p><p>#HTML5</p><p>#CSS</p>
-                        <p>#FinalCutPro</p><p>#Photoshop</p><p>#Illustrator</p><p>#InDesign</p><p>#Adobe XD</p><p>#Figma</p><p>#Procreate</p>
+                    <div class="activity-text">
+                        at an art museum
+                    </div>
+                    <div class="activity-text">
+                        crocheting, knitting,<br>
+                        watercolour painting,<br>
+                        or Duolingo!
                     </div>
                 </div>
             </div>
-            <div class="more-info">
-                <div class="category">
-                    <h3 class="title">My values & beliefs</h3>
-                    <div class="topic">
-                        <h5>Designing with heart and mind</h5>
-                        <p>Balance is key – not just in my everyday life but also in my work, where I focus on creating user-centered solutions. Solutions that are not only aesthetic or visually pleasing, but also functional and resonate on a human level, are essential to crafting experiences that are thoughtful, inclusive, and impactful. </p>
-                    </div>
-                    <div class="topic">
-                        <h5>Stay curious, keep growing</h5>
-                        <p>"Wonder is the beginning of wisdom" – Every question for me is a doorway to new knowledge, and each problem is an opportunity for growth. I'm constantly on a journey of exploration, user research, question-pondering, existence-questioning, and seeking solutions that simplify the complex and transform the ordinary into the extraordinary.</p>
-                    </div>
-                    <div class="topic">
-                        <h5>In someone else's shoes</h5>
-                        <p>Perspective-taking, for me, goes beyond skill – it's a guiding principle. I embrace empathy to understand others' viewpoints, a philosophy that is rooted in me since my multi-cultural childhood and one that drives my work now. This approach allows me to effectively identify user pain points and create solutions that balance user needs with business objectives.</p>
-                    </div>
+
+            <!-- Contact Card -->
+            <div class="card contact-card">
+                <div class="contact-text">
+                    I love making new<br>
+                    friends! Find me on<br>
+                    LinkedIn or email me
                 </div>
-                <div class="category">
-                    <h3 class="title">How I unplug</h3>
-                    <div class="topic">
-                        <h5>Yoga and Pilates</h5>
-                        <p>It's incredible what a mat and some dedication can achieve. There's nothing quite like the post-workout mix of accomplishment and renewed energy, and hunger of course.</p>
-                    </div>
-                    <div class="topic">
-                        <h5>Travelling</h5>
-                        <p>With Cambodia and Thailand ranking high on my list of memorable adventures, travelling is a strong passion of mine. I love to bring my film or digital cameras with me to capture precious moments, or attend a concert in Seoul.</p>
-                    </div>
+                <h2>Contact me</h2>
+                <div class="arrow">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
                 </div>
             </div>
-        </div>
-        <footer>
-        </footer>
-    </body>
+
+            <!-- Sports Card -->
+            <div class="card no-border sports-card">
+                <img src="resources/images/about/monet.JPG" alt="Monet's Water Lilies-myfave">
+            </div>
+        </main>
+    </div>
+</body>
+</html>
