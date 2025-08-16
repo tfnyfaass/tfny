@@ -241,6 +241,7 @@
         .contact-card #socials {
             color: var(--purple);
             text-decoration: none;
+            font-weight: 700;
         }
 
         .contact-card #socials:hover {
@@ -334,19 +335,154 @@
             }
         }
 
-        /* Hover Effects */
         .card {
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(71, 35, 164, 0.15);
+            transform: translateY(-2px) !important;
+            box-shadow: 0 8px 25px rgba(71, 35, 164, 0.15) !important;
         }
 
         .contact-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(194, 208, 57, 0.3);
+            transform: translateY(-2px) !important;
+            box-shadow: 0 8px 25px rgba(194, 208, 57, 0.3) !important;
+        }
+        /* Animation Classes */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes rotateIn {
+            from {
+                opacity: 0;
+                transform: rotate(-10deg) scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: rotate(0) scale(1);
+            }
+        }
+
+        /* Apply animations to cards */
+        .card {
+            opacity: 0;
+            animation-fill-mode: forwards;
+            animation-duration: 1.2s;
+            animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .header {
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards;
+        }
+
+        .hero-card {
+            animation-name: fadeInScale;
+            animation-delay: 0.2s;
+        }
+
+        .photo-card {
+            animation-name: fadeInUp;
+            animation-delay: 0.4s;
+        }
+
+        .skills-card {
+            animation-name: slideInRight;
+            animation-delay: 0.6s;
+        }
+
+        .activities-card {
+            animation-name: slideInLeft;
+            animation-delay: 0.8s;
+        }
+
+        .contact-card {
+            animation-name: fadeInUp;
+            animation-delay: 1s;
+        }
+
+        .art-card {
+            animation-name: rotateIn;
+            animation-delay: 1.2s;
+        }
+
+        /* Flower animation */
+        @keyframes flowerSpin {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .decorative-flower {
+            animation: flowerSpin 20s linear infinite;
+        }
+
+        /* Hover pulse for contact arrow */
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+        }
+
+        .contact-card:hover .arrow {
+            animation: pulse 1s ease-in-out infinite;
+        }
+
+        /* Optional: Add typing effect to hero text */
+        @keyframes typewriter {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100%;
+            }
         }
     </style>
 </head>
