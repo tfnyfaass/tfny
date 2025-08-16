@@ -12,7 +12,7 @@
             --lime: #C2D039;
             --brown: #372A2A;
             --cream: #F5F4E3;
-            --white: #ffffff;
+            --white: #fafafa;
         }
 
         * {
@@ -34,8 +34,6 @@
             padding: 20px;
             min-height: 100vh;
         }
-
-        /* Header */
         .header {
             display: flex;
             justify-content: space-between;
@@ -79,17 +77,20 @@
             color: var(--purple);
         }
 
-        /* Grid Layout */
+        .nav #about {
+            color: var(--purple);
+            font-weight: bold;
+        }
+
         .grid {
             display: grid;
             grid-template-columns: 2fr 1fr 1fr 2fr 2fr;
-            grid-template-rows: auto auto;
+            grid-template-rows: 1.5fr 1fr;
             gap: 20px;
             height: calc(100vh - 150px);
             min-height: 600px;
         }
 
-        /* Card Base Styles */
         .card {
             border-radius: 20px;
             padding: 25px;
@@ -98,13 +99,11 @@
             overflow: hidden;
         }
 
-        /* Remove border for image cards */
         .card.no-border {
             border: none;
             padding: 0;
         }
 
-        /* Hero Card */
         .hero-card {
             background: var(--purple);
             color: var(--white);
@@ -116,14 +115,14 @@
         }
 
         .hero-card h1 {
-            font-family: 'Bowlby One', cursive;
+            font-family: 'Bowlby One', helvetica;
             font-size: 36px;
             line-height: 0.9;
             margin-bottom: 15px;
         }
 
         .hero-card .subtitle {
-            font-family: 'Bowlby One', cursive;
+            font-family: 'Bowlby One', helvetica;
             font-size: 24px;
             line-height: 0.9;
             margin-bottom: 10px;
@@ -142,7 +141,6 @@
             opacity: 0.3;
         }
 
-        /* Photo Card */
         .photo-card {
             background: var(--white);
             display: flex;
@@ -158,7 +156,6 @@
             border-radius: 20px;
         }
 
-        /* Skills Card */
         .skills-card {
             background: var(--white);
             grid-column: 5 / 6;
@@ -174,10 +171,9 @@
 
         .skills-list {
             font-size: 14px;
-            line-height: 1.6;
+            line-height: 1.5;
         }
 
-        /* Activities Card */
         .activities-card {
             background: var(--white);
             font-size: 14px;
@@ -206,7 +202,6 @@
             line-height: 1.5;
         }
 
-        /* Contact Card */
         .contact-card {
             background: var(--lime);
             display: flex;
@@ -222,24 +217,38 @@
             line-height: 1.5;
         }
 
+        .contact-card .bottom-content {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+
         .contact-card h2 {
-            font-family: 'Bowlby One', cursive;
+            font-family: 'Bowlby One', helvetica;
             font-size: 36px;
             color: var(--brown);
             line-height: 0.9;
-            margin: 20px 0;
+            margin: 0;
         }
 
         .contact-card .arrow {
-            position: absolute;
-            bottom: 25px;
-            right: 25px;
             width: 30px;
             height: 30px;
+            margin-bottom: 5px;
         }
 
-        /* Sports Card */
-        .sports-card {
+        .contact-card #socials {
+            color: var(--purple);
+            text-decoration: none;
+        }
+
+        .contact-card #socials:hover {
+            color: var(--cream);
+            text-decoration: underline;
+        }
+
+        .art-card {
             background: var(--white);
             display: flex;
             align-items: center;
@@ -247,27 +256,13 @@
             grid-column: 5;
         }
 
-        .sports-card img {
+        .art-card img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             border-radius: 20px;
         }
 
-        /* Placeholder for images */
-        .image-placeholder {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, #e0e0e0, #f0f0f0);
-            border-radius: 20px;
-            color: #999;
-            font-size: 14px;
-        }
-
-        /* Responsive Design */
         @media (max-width: 768px) {
             .header {
                 flex-direction: column;
@@ -291,7 +286,7 @@
             .skills-card,
             .activities-card,
             .contact-card,
-            .sports-card {
+            .art-card {
                 grid-column: 1;
             }
 
@@ -361,18 +356,16 @@
             <div class="logo"><span>Tiffany</span> Faass</div>
             <nav class="nav">
                 <a href="#projects">Projects</a>
-                <a href="#about">About</a>
+                <a id= about href="#about">About</a>
                 <a href="#resume">Resume</a>
             </nav>
         </header>
 
         <main class="grid">
-            <!-- Hero Card -->
             <div class="card hero-card">
                 <div class="decorative-flower">
                     <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g stroke="currentColor" stroke-width="1" fill="none">
-                            <!-- Flower petals -->
                             <ellipse cx="50" cy="25" rx="8" ry="20" transform="rotate(0 50 50)"/>
                             <ellipse cx="50" cy="25" rx="8" ry="20" transform="rotate(45 50 50)"/>
                             <ellipse cx="50" cy="25" rx="8" ry="20" transform="rotate(90 50 50)"/>
@@ -391,12 +384,10 @@
                 <div class="subtitle">...and ambitious<br><span class="highlight">yoga</span> schedules</div>
             </div>
 
-            <!-- Photo Card -->
             <div class="card no-border photo-card">
                 <img src="resources/images/about/Tiffany.jpg" alt="Tiffany at a beautiful building">
             </div>
 
-            <!-- Skills Card -->
             <div class="card skills-card">
                 <h2>My skills</h2>
                 <div class="skills-list">
@@ -404,15 +395,17 @@
                     Information Architecture<br>
                     Wireframing<br>
                     Prototyping<br>
+                    Usability Testing<br><br>
                     Visual Design<br>
-                    Usability Testing<br>
                     Design Systems<br>
                     Figma<br>
-                    Adobe Creative Suite
+                    Adobe Creative Suite<br><br>
+                    Instructional Desgin<br>
+                    Adult Learning Theory <br><br>
+                    CSS/HTML <br>
                 </div>
             </div>
 
-            <!-- Activities Card -->
             <div class="card activities-card">
                 <h3>Outside of<br>work, you'll<br>find me</h3>
                 <div class="activities-content">
@@ -433,23 +426,23 @@
                 </div>
             </div>
 
-            <!-- Contact Card -->
             <div class="card contact-card">
                 <div class="contact-text">
                     I love making new<br>
                     friends! Find me on<br>
-                    LinkedIn or email me
+                    <a id=socials href="https://www.linkedin.com/in/tiffanyfaass/" >LinkedIn</a> or <a id=socials href= "mailto:tiffanyfaass@gmail.com">email me</a>
                 </div>
-                <h2>Contact me</h2>
-                <div class="arrow">
-                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
+                <div class="bottom-content">
+                    <h2>Contact me</h2>
+                    <div class="arrow">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
                 </div>
             </div>
 
-            <!-- Sports Card -->
-            <div class="card no-border sports-card">
+            <div class="card no-border art-card">
                 <img src="resources/images/about/monet.JPG" alt="Monet's Water Lilies-myfave">
             </div>
         </main>
