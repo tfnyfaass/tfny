@@ -26,7 +26,6 @@
             overflow-x: hidden;
         }
 
-        /* Landing Section */
         .landing-section {
             height: 100vh;
             background: var(--lime);
@@ -35,13 +34,14 @@
             justify-content: center;
             position: relative;
             overflow: hidden;
+            z-index: 1;
         }
 
         .landing-content {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            max-width: 1100px;
+            max-width: 1200px;
             width: 100%;
             padding: 0 60px;
             gap: 60px;
@@ -50,25 +50,27 @@
         .landing-text {
             flex: 1;
             z-index: 2;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .landing-text h1 {
-            font-family: 'Bowlby One', cursive;
-            font-size: 62px;
+            font-family: 'Bowlby One', Helvetica, sans-serif;
+            font-size: 60px;
             color: var(--purple);
-            line-height: 0.9;
-            margin-top: 20px;
+            line-height: 0.85;
+            margin-bottom: 15px;
         }
 
         .landing-text .subtitle {
             font-family: 'Anonymous Pro', monospace;
-            font-size: 36px;
+            font-size: 30px;
             color: var(--purple);
             font-style: italic;
-            line-height: 1.2;
+            line-height: 1.1;
         }
 
-        /* Spirograph Flower */
         .flower-container {
             flex: 1;
             display: flex;
@@ -78,8 +80,8 @@
         }
 
         .spirograph-flower {
-            width: 500px;
-            height: 500px;
+            width: 450px;
+            height: 450px;
             animation: flowerRotate 30s linear infinite;
         }
 
@@ -92,7 +94,6 @@
             }
         }
 
-        /* Scroll Indicator */
         .scroll-indicator {
             position: absolute;
             bottom: 30px;
@@ -131,11 +132,12 @@
             }
         }
 
-        /* Projects Section with Nav */
         .projects-section {
             min-height: 100vh;
             background: var(--cream);
             padding: 20px;
+            position: relative;
+            z-index: 2;
         }
 
         .container {
@@ -143,12 +145,11 @@
             margin: 0 auto;
         }
 
-        /* Navigation Header */
         .header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 50px;
+            margin-bottom: 30px;
             padding: 15px 25px;
             background: var(--white);
             border-radius: 25px;
@@ -166,6 +167,11 @@
 
         .logo span {
             font-style: italic;
+        }
+
+        .logo a {
+            text-decoration: none;
+            color: var(--brown);
         }
 
         .nav {
@@ -192,7 +198,6 @@
             font-weight: 700;
         }
 
-        /* Projects Grid */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -230,7 +235,7 @@
         }
 
         .project-title {
-            font-family: 'Bowlby One', cursive;
+            font-family: 'Bowlby One', Helvetica, sans-serif;
             font-size: 24px;
             color: var(--purple);
             margin-bottom: 10px;
@@ -257,9 +262,8 @@
             color: var(--purple);
         }
 
-        /* Page Title */
         .page-title {
-            font-family: 'Bowlby One', cursive;
+            font-family: 'Bowlby One', Helvetica, sans-serif;
             font-size: 48px;
             color: var(--purple);
             margin-bottom: 10px;
@@ -268,10 +272,9 @@
         .page-subtitle {
             font-size: 16px;
             color: var(--brown);
-            margin-bottom: 40px;
+            margin-bottom: 30px;
         }
 
-        /* Animations */
         @keyframes fadeIn {
             from {
                 opacity: 0;
@@ -295,7 +298,7 @@
             animation: fadeIn 1.2s ease 0.6s backwards, bounce 2s infinite 1.8s;
         }
 
-        /* Responsive */
+
         @media (max-width: 768px) {
             .landing-content {
                 flex-direction: column;
@@ -332,11 +335,10 @@
     </style>
 </head>
 <body>
-    <!-- Landing/Intro Section -->
     <section class="landing-section" id="home">
         <div class="landing-content">
             <div class="landing-text">
-                <h1>I DESIGN FOR<br>HOW PEOPLE</h1>
+                <h1>I DESIGN <br> FOR<br>HOW <br>PEOPLE</h1>
                 <div class="subtitle">think, learn,<br>and grow</div>
             </div>
             <div class="flower-container">
@@ -385,11 +387,10 @@
         </div>
     </section>
 
-    <!-- Projects Section with Navigation -->
     <section class="projects-section" id="projects">
         <div class="container">
             <header class="header">
-                <div class="logo"><span>Tiffany</span> Faass</div>
+                <div class="logo"><a href="home.html"><span>Tiffany</span> Faass</a></div>
                 <nav class="nav">
                     <a href="#projects" class="active">Projects</a>
                     <a href="about.html">About</a>
@@ -401,7 +402,6 @@
             <div class="page-subtitle">Designing experiences that help people think, learn, and grow</div>
 
             <div class="projects-grid">
-                <!-- Project 1 -->
                 <div class="project-card">
                     <div class="project-image">
                         Project Image Placeholder
@@ -416,8 +416,6 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- Project 2 -->
                 <div class="project-card">
                     <div class="project-image">
                         Project Image Placeholder
@@ -432,8 +430,6 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- Project 3 -->
                 <div class="project-card">
                     <div class="project-image">
                         Project Image Placeholder
@@ -449,7 +445,7 @@
                     </div>
                 </div>
 
-                <!-- Add more projects as needed -->
+
             </div>
         </div>
     </section>
@@ -472,7 +468,8 @@
             const parallax = document.querySelector('.landing-section');
             const speed = 0.5;
             
-            if (parallax) {
+            // Only apply parallax if we're still in the landing section view
+            if (parallax && scrolled < window.innerHeight) {
                 parallax.style.transform = `translateY(${scrolled * speed}px)`;
             }
         });
