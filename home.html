@@ -262,6 +262,7 @@
             min-height: 100vh;
             background: var(--cream);
             padding: 20px;
+            padding-top: 40px;
             position: relative;
             z-index: 2;
         }
@@ -269,17 +270,34 @@
         .container {
             max-width: 1200px;
             margin: 0 auto;
+            position: relative;
         }
 
         .header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 30px;
             padding: 15px 25px;
             background: var(--white);
             border-radius: 25px;
             border: 2px solid var(--brown);
+            position: sticky;
+            top: 20px;
+            z-index: 100;
+            margin-bottom: 30px;
+            transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .header--visible {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .header--hidden {
+            transform: translateY(-150%);
+            opacity: 0;
         }
 
         .logo {
@@ -320,6 +338,99 @@
         }
 
         .nav a.active {
+            color: var(--purple);
+            font-weight: 700;
+        }
+
+        /* Mobile menu button */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+            position: relative;
+            width: 30px;
+            height: 30px;
+        }
+
+        .menu-toggle span {
+            display: block;
+            width: 25px;
+            height: 2px;
+            background: var(--brown);
+            margin: 5px 0;
+            transition: all 0.3s ease;
+            position: absolute;
+            left: 2.5px;
+        }
+
+        .menu-toggle span:first-child {
+            top: 6px;
+        }
+
+        .menu-toggle span:nth-child(2) {
+            top: 14px;
+        }
+
+        .menu-toggle span:last-child {
+            bottom: 6px;
+        }
+
+        .menu-toggle.active span:first-child {
+            transform: rotate(45deg);
+            top: 14px;
+        }
+
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active span:last-child {
+            transform: rotate(-45deg);
+            bottom: 14px;
+        }
+
+        /* Mobile menu overlay */
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            top: 80px;
+            left: 20px;
+            right: 20px;
+            background: var(--white);
+            border-radius: 20px;
+            border: 2px solid var(--brown);
+            padding: 20px;
+            flex-direction: column;
+            gap: 20px;
+            z-index: 99;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .mobile-nav.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .mobile-nav a {
+            font-family: 'Anonymous Pro', monospace;
+            font-size: 16px;
+            color: var(--brown);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 10px;
+            transition: color 0.3s ease;
+        }
+
+        .mobile-nav a:hover {
+            color: var(--purple);
+        }
+
+        .mobile-nav a.active {
             color: var(--purple);
             font-weight: 700;
         }
@@ -443,8 +554,20 @@
             }
 
             .header {
-                flex-direction: column;
-                gap: 15px;
+                justify-content: space-between;
+                padding: 15px 20px;
+            }
+
+            .nav {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .mobile-nav {
+                display: flex;
             }
         }
     </style>
@@ -511,6 +634,17 @@
             <header class="header">
                 <div class="logo"><a href="home.html"><span>Tiffany</span> Faass</a></div>
                 <nav class="nav">
+                    <a href="projects.html" class="active">Projects</a>
+                    <a href="#personal">Personal</a>
+                    <a href="about.html">About</a>
+                    <a href="#resume">Resume</a>
+                </nav>
+                <button class="menu-toggle" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <nav class="mobile-nav" id="mobileNav">
                     <a href="projects.html" class="active">Projects</a>
                     <a href="#personal">Personal</a>
                     <a href="about.html">About</a>
@@ -592,6 +726,31 @@
     </section>
 
     <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileNav = document.getElementById('mobileNav');
+        
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            mobileNav.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!menuToggle.contains(e.target) && !mobileNav.contains(e.target)) {
+                menuToggle.classList.remove('active');
+                mobileNav.classList.remove('active');
+            }
+        });
+
+        // Close mobile menu when clicking a link
+        mobileNav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                mobileNav.classList.remove('active');
+            });
+        });
+
         // Smooth scroll behavior
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -618,6 +777,37 @@
                     bgText.style.opacity = Math.max(0.05 - scrolled * 0.0001, 0);
                 }
             }
+        });
+
+        // Header scroll behavior
+        let lastScrollY = window.scrollY;
+        const header = document.querySelector('.header');
+        const projectsSection = document.querySelector('.projects-section');
+        const projectsGrid = document.querySelector('.projects-grid');
+        
+        window.addEventListener('scroll', () => {
+            const currentScrollY = window.scrollY;
+            const projectsSectionTop = projectsSection.offsetTop;
+            const projectsGridTop = projectsGrid.offsetTop + projectsSectionTop;
+            
+            // Only apply hide/show behavior after scrolling past the projects grid start
+            if (currentScrollY > projectsGridTop) {
+                if (currentScrollY > lastScrollY && currentScrollY - lastScrollY > 3) {
+                    // Scrolling down - hide header
+                    header.classList.remove('header--visible');
+                    header.classList.add('header--hidden');
+                } else if (currentScrollY < lastScrollY) {
+                    // Scrolling up - show header
+                    header.classList.remove('header--hidden');
+                    header.classList.add('header--visible');
+                }
+            } else {
+                // Haven't reached projects grid yet - keep header visible
+                header.classList.add('header--visible');
+                header.classList.remove('header--hidden');
+            }
+            
+            lastScrollY = currentScrollY;
         });
 
         // Add active class to nav based on scroll position
