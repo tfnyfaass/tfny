@@ -12,6 +12,8 @@
             --brown: #372A2A;
             --cream: #F5F4E3;
             --white: #fafafa;
+            --light: #A185E5;
+            --dark-purple: #301B65;
         }
 
         * {
@@ -460,6 +462,25 @@
             box-shadow: 0 12px 35px rgba(71, 35, 164, 0.25);
         }
 
+        .project-image {
+            width: 100%;
+            height: 250px;
+            background-color: var(--lime);
+            color: var(--white)
+        }
+
+        .project-image.light {
+            background-color: var(--light);
+        }
+
+        .project-image.dark {
+            background-color: var(--purple);
+        }
+
+        .project-image.darkest {
+            background-color: var(--dark-purple);
+        }
+
         .project-image img {
             width: 100%;
             height: 250px;
@@ -638,7 +659,7 @@
                     <a href="projects.html" class="active">Projects</a>
                     <a href="#personal">Personal</a>
                     <a href="about.html">About</a>
-                    <a href="#resume">Resume</a>
+                    <a href="resources/faass-tiffany-resume.pdf" target="_blank">Resume</a>
                 </nav>
                 <button class="menu-toggle" id="menuToggle">
                     <span></span>
@@ -658,8 +679,8 @@
 
             <div class="projects-grid">
                 <div class="project-card">
-                    <div class="project-image">
-                        Project Image Placeholder
+                    <div class="project-image darkest">
+                        <img src="resources/thumbnails/landing/kato-thumbnail.png" alt="Conversational History-Taking: Dual-agent virtual patient">
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">Conversational History-Taking: Dual-agent virtual patient </h3>
@@ -676,7 +697,7 @@
                 </div>
                 <div class="project-card">
                     <div class="project-image">
-                        Project Image Placeholder
+                        <img src="resources/thumbnails/landing/paiget-thumbnail.gif" alt="AI-Powered microlearning & course-creation platform">
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">AI-Powered microlearning & course-creation platform </h3>
@@ -690,8 +711,8 @@
                     </div>
                 </div>
                 <div class="project-card">
-                    <div class="project-image">
-                        Project Image Placeholder
+                    <div class="project-image dark">
+                        <img src="resources\thumbnails\landing\entrada-ui-thumbnail.gif" alt="UX Redesign of UBC Med Entrada course communities">
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">UX Redesign of UBC Med Entrada course communities</h3>
@@ -706,8 +727,9 @@
                     </div>
                 </div>
                 <div class="project-card">
-                    <div class="project-image">
-                        <img src="resources/images/landing/hd-mining-thumbnail.gif" ></div>
+                    <div class="project-image light">
+                        <img src="resources/thumbnails/landing/hd-mining-thumbnail.gif" alt="Web Design and Development for branding issue">
+                    </div>
                     <div class="project-content">
                         <h3 class="project-title">Web Design and Development for branding issue </h3>
                         <p class="project-description">Built a comprehensive design system for a growing startup, improving design consistency.</p>
