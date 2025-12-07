@@ -695,7 +695,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="project-card" id="paiget-card">
+                <div class="project-card">
                     <div class="project-image">
                         <img src="resources/thumbnails/landing/paiget-ui-static.png" data-animated="resources/thumbnails/landing/paiget-thumbnail.gif" alt="thumbnail image of AI-Powered microlearning & course-generation platform Paiget">
                     </div>
@@ -712,7 +712,7 @@
                 </div>
                 <div class="project-card">
                     <div class="project-image dark">
-                        <img src="resources/thumbnails/landing/entrada-ui-static.png" alt="UX Redesign of UBC Med Entrada course communities">
+                        <img src="resources/thumbnails/landing/entrada-ui-static.png" data-animated="resources/thumbnails/landing/entrada-moving.gif" alt="UX Redesign of UBC Med Entrada course communities">
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">UX Redesign of UBC Med Entrada course communities</h3>
@@ -726,9 +726,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="project-card">
+                <div class="project-card" id="hd-card">
                     <div class="project-image light">
-                        <img src="resources/thumbnails/landing/hdmining-static.png" alt="Web Design and Development for branding issue">
+                        <img src="resources/thumbnails/landing/hdmining-static.png" data-animated="resources/thumbnails/landing/hd-moving.gif" alt="Web Design and Development for branding issue">
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">Web Design and Development for branding issue </h3>
@@ -849,22 +849,21 @@
             });
         });
 
-        const cardElement = document.getElementById('paiget-card');
-        if (cardElement) {
+        const allCards = document.querySelectorAll('.project-card');
+        allCards.forEach(cardElement => {
             const imgElement = cardElement.querySelector('img');
             if (imgElement) {
                 const staticSrc = imgElement.src;
                 const animatedSrc = imgElement.getAttribute('data-animated');
-
                 cardElement.addEventListener('mouseenter', function() {
                     imgElement.src = animatedSrc; 
                 });
-
                 cardElement.addEventListener('mouseleave', function() {
                     imgElement.src = staticSrc; 
                 });
             }
-        }
+        });
+
     </script>
 </body>
 </html>
