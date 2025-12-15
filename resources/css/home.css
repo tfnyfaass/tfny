@@ -389,7 +389,6 @@ body {
     bottom: 14px;
 }
 
-/* Mobile menu overlay */
 .mobile-nav {
     display: none;
     position: fixed;
