@@ -446,6 +446,26 @@ body {
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
+    position: relative;
+}
+
+.main-link::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1; 
+}
+
+.project-title a {
+    text-decoration: none;
+    color: var(--dark-purple);
+}
+
+.project-title a:visited {
+    text-decoration: none;
 }
 
 .project-card:hover {
