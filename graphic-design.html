@@ -21,41 +21,41 @@
         </header>
 
         <main class="grid">
-            <div class="card project-card">
-                <img src="resources/thumbnails/graphic-design/onboarding-static.png">
-            </div>
             <div class="card no-border photo-card">
-                <img src="resources/thumbnails/graphic-design/Pockit-skz.png" alt="an image of Tiffany's illustration project">
+                <img src="resources/thumbnails/graphic-design/enchante2.png" data-animated="" alt="magazine covers Tiffany designed">
             </div>
-
-            <div class="card poster-card">
-                <img src="resources/thumbnails/graphic-design/edtech-services.png">
-            </div>
-
             <div class="card presentation-card">
-                <img src="resources/thumbnails/graphic-design/Align_AB.png">
+                <img src="resources/thumbnails/graphic-design/Align_AB.png" data-animated="resources/thumbnails/graphic-design/Align_AB.gif">
             </div>
-
-            <div class="card contact-card">
-                <div class="contact-text">
-                    I love making new<br>
-                    friends! Find me on<br>
-                    <a id=socials href="https://www.linkedin.com/in/tiffanyfaass/" target="_blank">LinkedIn</a> or <a id=socials href= "mailto:tiffanyfaass@gmail.com">email me</a>
-                </div>
-                <div class="bottom-content">
-                    <h2>Contact me</h2>
-                    <div class="arrow">
-                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </div>
-                </div>
+            <div class="card poster-card">
+                <img src="resources/thumbnails/graphic-design/poster.png">
             </div>
-
-            <div class="card no-border art-card">
-                <img src="resources/images/about/monet.JPG" alt="Monet's Water Lilies-myfave">
+            <div class="card project-card">
+                <img src="resources/thumbnails/graphic-design/onboarding-static.png" data-animated="resources/thumbnails/graphic-design/onboarding-moving.gif">
+            </div>
+            <div class="card art-card">
+                <img src="resources/thumbnails/graphic-design/Pockit-skz.png" alt="a cartoon illustration Tiffany did">
+            </div>
+            <div class="card no-border contact-card">
+                <img src="resources/thumbnails/graphic-design/module.png">
             </div>
         </main>
     </div>
+   <script>
+    const allCards = document.querySelectorAll('.card');
+            allCards.forEach(cardElement => {
+                const imgElement = cardElement.querySelector('img');
+                if (imgElement) {
+                    const staticSrc = imgElement.src;
+                    const animatedSrc = imgElement.getAttribute('data-animated');
+                    cardElement.addEventListener('mouseenter', function() {
+                        imgElement.src = animatedSrc; 
+                    });
+                    cardElement.addEventListener('mouseleave', function() {
+                        imgElement.src = staticSrc; 
+                    });
+                }
+            });
+   </script> 
 </body>
 </html>
