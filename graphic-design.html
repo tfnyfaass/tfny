@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiffany Faass - UX Designer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Bowlby+One&display=swap" rel="stylesheet">
+    <link href="resources/css/graphic-design.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <a href="home.html">
+                    <img src="resources/images/TFLogo.png" alt="Tiffany Faass Logo" class="logo-img">
+                </a>
+            </div>
+            <nav class="nav">
+                <a href="home.html#projects">Projects</a>
+                <a href="graphic-design.html" class="active"> Graphic Design</a>
+                <a href="about.html">About</a>
+                <a href="resources/faass-tiffany-resume.pdf" target="_blank">Resume</a>
+            </nav>
+        </header>
+
+        <main class="grid">
+            <div class="card no-border photo-card">
+                <img src="resources/thumbnails/graphic-design/enchante2.png" data-animated="" alt="magazine covers Tiffany designed">
+            </div>
+            <div class="card presentation-card hover">
+                <img src="resources/thumbnails/graphic-design/Align_AB.png" data-animated="resources/thumbnails/graphic-design/Align_AB.gif">
+            </div>
+            <div class="card poster-card hover">
+                <img src="resources/thumbnails/graphic-design/poster.png">
+            </div>
+            <div class="card project-card">
+                <img src="resources/thumbnails/graphic-design/onboarding.png" data-animated="resources/thumbnails/graphic-design/onboarding.gif">
+            </div>
+            <div class="card art-card">
+                <img src="resources/thumbnails/graphic-design/Pockit-skz.png" alt="a cartoon illustration Tiffany did">
+            </div>
+            <div class="card no-border contact-card">
+                <img src="resources/thumbnails/graphic-design/module.png">
+            </div>
+        </main>
+    </div>
+   <script>
+    const allCards = document.querySelectorAll('.hover');
+            allCards.forEach(cardElement => {
+                const imgElement = cardElement.querySelector('img');
+                if (imgElement) {
+                    const staticSrc = imgElement.src;
+                    const animatedSrc = imgElement.getAttribute('data-animated');
+                    cardElement.addEventListener('mouseenter', function() {
+                        imgElement.src = animatedSrc; 
+                    });
+                    cardElement.addEventListener('mouseleave', function() {
+                        imgElement.src = staticSrc; 
+                    });
+                }
+            });
+   </script> 
+</body>
+</html>

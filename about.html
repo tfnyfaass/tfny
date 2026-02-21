@@ -1,75 +1,114 @@
+
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="./resources/css/global.css">
-        <link rel="stylesheet" href="./resources/css/about.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&family=Funnel+Sans:ital,wght@0,300..800;1,300..800&family=Loved+by+the+King&family=Poiret+One&family=Quicksand:wght@300..700&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-        <title>tfny</title>
-        <link rel="icon" type="image/icon" href="resources/images/Favicon.png">
-    </head>
-    <body>
-        <div class="header">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiffany Faass - UX Designer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Bowlby+One&display=swap" rel="stylesheet">
+    <link href="resources/css/about.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
             <div class="logo">
-              <a href="index.html"><img src="resources/images/TFLogo.png"></a>
-              <p class="brand">Minimalistic UX Designs</p>
+                <a href="home.html">
+                    <img src="resources/images/TFLogo.png" alt="Tiffany Faass Logo" class="logo-img">
+                </a>
             </div>
-            <ul class="nav">
-              <li><a href="services.html">Services</a></li>
-              <li><a href="about.html">About</a></li>
-              <li><a href="contact.html">Contact</a></li>
-            </ul>
-          </div>
-        <div class="main">
-            <div class="intro">
-                <img class="profile-pic" src="resources/images/about/TFPortfolio3.png">
-                <div class="about-me">
-                    <div class="intro-message">
-                        <h3>Hi there!</h3>
-                        <h3>Nice to meet you.</h3>
-                        <p class="welcome">Welcome to my world, where psychology meets design and creativity sparks innovation.</p>
-                        <p>My journey began with a fascination for endocrinology and behavior in school, leading me down the rabbit hole of user experience and design. With a Google UX Design Certificate, the pursuit of a full-stack developer certificate from Codecademy, and a deep-seated passion for bringing ideas to life, I've found my niche in this vast, dynamic field of UX design.</p>
-                        <p>From my enriching experiences working at the Faculty of Medicine at UBC, UBC HR, to startups, I've reveled in the art of merging aesthetic design with practical functionality through instructional design, UX/UI design, graphic design, and web development.</p>                        
-                        <h5>My toolkit includes:</h5>
+            <nav class="nav">
+                <a href="home.html#projects">Projects</a>
+                <a href="graphic-design.html">Graphic Design</a>
+                <a id= about href="about.html">About</a>
+                <a href="resources/faass-tiffany-resume.pdf" target="_blank">Resume</a>
+            </nav>
+        </header>
+
+        <main class="grid">
+            <div class="card hero-card">
+                <div class="decorative-flower">
+                    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g stroke="currentColor" stroke-width="1" fill="none">
+                            <ellipse cx="50" cy="25" rx="8" ry="20" transform="rotate(0 50 50)"/>
+                            <ellipse cx="50" cy="25" rx="8" ry="20" transform="rotate(45 50 50)"/>
+                            <ellipse cx="50" cy="25" rx="8" ry="20" transform="rotate(90 50 50)"/>
+                            <ellipse cx="50" cy="25" rx="8" ry="20" transform="rotate(135 50 50)"/>
+                            <ellipse cx="50" cy="25" rx="8" ry="20" transform="rotate(180 50 50)"/>
+                            <ellipse cx="50" cy="25" rx="8" ry="20" transform="rotate(225 50 50)"/>
+                            <ellipse cx="50" cy="25" rx="8" ry="20" transform="rotate(270 50 50)"/>
+                            <ellipse cx="50" cy="25" rx="8" ry="20" transform="rotate(315 50 50)"/>
+                            <circle cx="50" cy="50" r="8"/>
+                        </g>
+                    </svg>
+                </div>
+                <h1>I'm a UX<br>designer</h1>
+                <div class="subtitle">who's into</div>
+                <div class="subtitle"><span class="highlight">art,<br>learning,</span></div>
+                <div class="subtitle">...and ambitious<br><span class="highlight">pilates</span> schedules</div>
+            </div>
+
+            <div class="card no-border photo-card">
+                <img src="resources/images/about/Tiffany.jpg" alt="Tiffany at a beautiful building">
+            </div>
+
+            <div class="card skills-card">
+                <h2>My skills</h2>
+                <div class="skills-list">
+                    User Research<br>
+                    Information Architecture<br>
+                    Wireframing<br>
+                    Prototyping<br>
+                    Usability Testing<br><br>
+                    Visual Design<br>
+                    Design Systems<br>
+                    Figma<br>
+                    Adobe Creative Suite<br><br>
+                    Instructional Desgin<br>
+                    Adult Learning Theory <br><br>
+                    CSS/HTML/JavaScript<br>
+                </div>
+            </div>
+
+            <div class="card activities-card">
+                <h3>Outside of<br>work, you'll<br>find me</h3>
+                <div class="activities-content">
+                    <div class="activity-text">
+                        rushing to the 9am<br>
+                        yoga or pilates class<br>
+                        I ambitiously booked<br>
+                        the night before
                     </div>
-                    <div class="toolkit">
-                        <p>#Canvas</p><p>#Articulate</p><p>#Camtasia</p><p>#HTML5</p><p>#CSS</p>
-                        <p>#FinalCutPro</p><p>#Photoshop</p><p>#Illustrator</p><p>#InDesign</p><p>#Adobe XD</p><p>#Figma</p><p>#Procreate</p>
+                    <div class="activity-text">
+                        at an art museum
+                    </div>
+                    <div class="activity-text">
+                        crocheting, knitting,<br>
+                        watercolour painting,<br>
+                        or Duolingo!
                     </div>
                 </div>
             </div>
-            <div class="more-info">
-                <div class="category">
-                    <h3 class="title">My values & beliefs</h3>
-                    <div class="topic">
-                        <h5>Designing with heart and mind</h5>
-                        <p>Balance is key – not just in my everyday life but also in my work, where I focus on creating user-centered solutions. Solutions that are not only aesthetic or visually pleasing, but also functional and resonate on a human level, are essential to crafting experiences that are thoughtful, inclusive, and impactful. </p>
-                    </div>
-                    <div class="topic">
-                        <h5>Stay curious, keep growing</h5>
-                        <p>"Wonder is the beginning of wisdom" – Every question for me is a doorway to new knowledge, and each problem is an opportunity for growth. I'm constantly on a journey of exploration, user research, question-pondering, existence-questioning, and seeking solutions that simplify the complex and transform the ordinary into the extraordinary.</p>
-                    </div>
-                    <div class="topic">
-                        <h5>In someone else's shoes</h5>
-                        <p>Perspective-taking, for me, goes beyond skill – it's a guiding principle. I embrace empathy to understand others' viewpoints, a philosophy that is rooted in me since my multi-cultural childhood and one that drives my work now. This approach allows me to effectively identify user pain points and create solutions that balance user needs with business objectives.</p>
-                    </div>
+
+            <div class="card contact-card">
+                <div class="contact-text">
+                    I love making new<br>
+                    friends! Find me on<br>
+                    <a id=socials href="https://www.linkedin.com/in/tiffanyfaass/" target="_blank">LinkedIn</a> or <a id=socials href= "mailto:tiffanyfaass@gmail.com">email me</a>
                 </div>
-                <div class="category">
-                    <h3 class="title">How I unplug</h3>
-                    <div class="topic">
-                        <h5>Yoga and Pilates</h5>
-                        <p>It's incredible what a mat and some dedication can achieve. There's nothing quite like the post-workout mix of accomplishment and renewed energy, and hunger of course.</p>
-                    </div>
-                    <div class="topic">
-                        <h5>Travelling</h5>
-                        <p>With Cambodia and Thailand ranking high on my list of memorable adventures, travelling is a strong passion of mine. I love to bring my film or digital cameras with me to capture precious moments, or attend a concert in Seoul.</p>
+                <div class="bottom-content">
+                    <h2>Contact me</h2>
+                    <div class="arrow">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
                     </div>
                 </div>
             </div>
-        </div>
-        <footer>
-        </footer>
-    </body>
+
+            <div class="card no-border art-card">
+                <img src="resources/images/about/monet.JPG" alt="Monet's Water Lilies-myfave">
+            </div>
+        </main>
+    </div>
+</body>
+</html>
