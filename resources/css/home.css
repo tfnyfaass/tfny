@@ -295,25 +295,19 @@ body {
 }
 
 .logo {
-    font-family: 'Anonymous Pro', monospace;
-    font-size: 18px;
-    font-weight: 400;
-    color: var(--brown);
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    display: flex;
+    align-items: center; 
 }
 
-.logo span {
-    font-style: italic;
+.logo-img {
+    max-height: 40px; 
+    width: auto;   
+    display: block;
+    transition: transform 0.3s ease;
 }
 
-.logo a {
-    text-decoration: none;
-    color: var(--brown);
-}
-
-.logo a:hover {
-    color: var(--purple);
+.logo a:hover .logo-img {
+    transform: scale(1.05) rotate(-2deg); 
 }
 
 .nav {
@@ -544,8 +538,6 @@ body {
     margin-bottom: 20px;
 }
 
-/* --- FOOTER STYLES --- */
-
 .site-footer {
     padding: 60px 20px 40px;
     background: var(--cream);
@@ -561,7 +553,6 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    /* This creates the hard, comic-style offset shadow */
     box-shadow: 10px 10px 0px var(--purple); 
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -745,5 +736,9 @@ body {
 
     .mobile-nav {
         display: flex;
+    }
+
+    .logo-img {
+        max-height: 32px; 
     }
 }

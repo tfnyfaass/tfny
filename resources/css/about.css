@@ -38,26 +38,21 @@
     }
 
     .logo {
-        font-family: 'Anonymous Pro', monospace;
-        font-size: 18px;
-        font-weight: 400;
-        color: var(--brown);
-        text-transform: uppercase;
-        letter-spacing: 1px;
+        display: flex;
+        align-items: center; 
     }
-
-    .logo span {
-        font-style: italic;
+    
+    .logo-img {
+        max-height: 40px; 
+        width: auto;   
+        display: block;
+        transition: transform 0.3s ease;
     }
-
-    .logo a {
-        color: var(--brown);
-        text-decoration: none;
+    
+    .logo a:hover .logo-img {
+        transform: scale(1.05) rotate(-2deg); 
     }
-
-    .logo a:hover {
-        color: var(--purple);
-    }
+    
 
     .nav {
         display: flex;
