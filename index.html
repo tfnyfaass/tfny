@@ -73,13 +73,27 @@
                         <img src="resources/images/TFLogo.png" alt="Tiffany Faass Logo" class="logo-img">
                     </a>
                 </div>
+                
                 <nav class="nav">
                     <a href="index.html#projects" class="active">Projects</a>
                     <a href="graphic-design.html">Graphic Design</a>
                     <a href="about.html">About</a>
                     <a href="resources/faass-tiffany-resume.pdf" target="_blank">Resume</a>
                 </nav>
-                </header>
+    
+                <button class="menu-toggle" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                
+                <nav class="mobile-nav" id="mobileNav">
+                    <a href="index.html#projects">Projects</a>
+                    <a href="graphic-design.html">Graphic Design</a>
+                    <a href="about.html">About</a>
+                    <a href="resources/faass-tiffany-resume.pdf" target="_blank">Resume</a>
+                </nav>
+            </header>
 
             <div id="projects" class="page-title">UX  / UI Projects</div>
             <div class="page-subtitle"> Some examples of experiences I designed to help people learn and grow</div>
@@ -357,21 +371,39 @@
                 }
             });
         });
+        
+        function initHoverEffects() {
+            const allCards = document.querySelectorAll('.project-card');
+            
+            allCards.forEach(cardElement => {
+                const imgElement = cardElement.querySelector('img');
+                const animatedSrc = imgElement?.getAttribute('data-animated');
+                
+                if (imgElement && animatedSrc) {
+                    
+                    cardElement.addEventListener('mouseenter', () => {
+                        // Log to the console so we can see if the hover is actually registering
+                        console.log('Hover detected! Trying to load:', animatedSrc);
+                        
+                        // Save the static image URL safely
+                        if (!imgElement.getAttribute('data-static')) {
+                            imgElement.setAttribute('data-static', imgElement.src);
+                        }
+                        
+                        imgElement.src = animatedSrc;
+                    });
+                    
+                    cardElement.addEventListener('mouseleave', () => {
+                        const staticSrc = imgElement.getAttribute('data-static');
+                        if (staticSrc) {
+                            imgElement.src = staticSrc;
+                        }
+                    });
+                }
+            });
+        }
 
-        const allCards = document.querySelectorAll('.project-card');
-        allCards.forEach(cardElement => {
-            const imgElement = cardElement.querySelector('img');
-            if (imgElement) {
-                const staticSrc = imgElement.src;
-                const animatedSrc = imgElement.getAttribute('data-animated');
-                cardElement.addEventListener('mouseenter', function() {
-                    imgElement.src = animatedSrc; 
-                });
-                cardElement.addEventListener('mouseleave', function() {
-                    imgElement.src = staticSrc; 
-                });
-            }
-        });
+        initHoverEffects();
     </script>
 </body>
 </html>
