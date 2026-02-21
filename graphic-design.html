@@ -28,10 +28,10 @@
             <div class="card no-border photo-card">
                 <img src="resources/thumbnails/graphic-design/enchante2.png" data-animated="" alt="magazine covers Tiffany designed">
             </div>
-            <div class="card presentation-card">
+            <div class="card presentation-card hover">
                 <img src="resources/thumbnails/graphic-design/Align_AB.png" data-animated="resources/thumbnails/graphic-design/Align_AB.gif">
             </div>
-            <div class="card poster-card">
+            <div class="card poster-card hover">
                 <img src="resources/thumbnails/graphic-design/poster.png">
             </div>
             <div class="card project-card">
@@ -46,7 +46,7 @@
         </main>
     </div>
    <script>
-    const allCards = document.querySelectorAll('.card');
+    const allCards = document.querySelectorAll('.hover');
             allCards.forEach(cardElement => {
                 const imgElement = cardElement.querySelector('img');
                 if (imgElement) {
