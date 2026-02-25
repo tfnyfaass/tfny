@@ -80,6 +80,97 @@
         font-weight: 700;
     }
 
+    /* Mobile menu button */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    position: relative;
+    width: 30px;
+    height: 30px;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background: var(--brown);
+    margin: 5px 0;
+    transition: all 0.3s ease;
+    position: absolute;
+    left: 2.5px;
+}
+
+.menu-toggle span:first-child {
+    top: 6px;
+}
+
+.menu-toggle span:nth-child(2) {
+    top: 14px;
+}
+
+.menu-toggle span:last-child {
+    bottom: 6px;
+}
+
+.menu-toggle.active span:first-child {
+    transform: rotate(45deg);
+    top: 14px;
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:last-child {
+    transform: rotate(-45deg);
+    bottom: 14px;
+}
+
+.mobile-nav {
+    display: none;
+    position: fixed;
+    top: 80px;
+    left: 20px;
+    right: 20px;
+    background: var(--white);
+    border-radius: 20px;
+    border: 2px solid var(--brown);
+    padding: 20px;
+    flex-direction: column;
+    gap: 20px;
+    z-index: 99;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.mobile-nav.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.mobile-nav a {
+    font-family: 'Anonymous Pro', monospace;
+    font-size: 16px;
+    color: var(--brown);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 10px;
+    transition: color 0.3s ease;
+}
+
+.mobile-nav a:hover {
+    color: var(--purple);
+}
+
+.mobile-nav a.active {
+    color: var(--purple);
+    font-weight: 700;
+}
     .grid {
         display: grid;
         grid-template-columns: 2fr 1fr 1fr 2fr 2fr;
@@ -363,4 +454,67 @@
 
     .contact-card:hover .arrow {
         animation: pulse 1s ease-in-out infinite;
+    }
+
+    @media (max-width: 768px) {
+        .landing-content {
+            flex-direction: column;
+            padding: 40px 20px;
+            text-align: center;
+        }
+    
+        .name-highlight h1 {
+            font-size: 60px;
+        }
+    
+        .landing-text h2 {
+            font-size: 38px;
+        }
+    
+        .landing-text .subtitle {
+            font-size: 24px;
+            padding-left: 0;
+        }
+    
+        .landing-text .subtitle::before {
+            display: none;
+        }
+    
+        .spirograph-flower {
+            width: 300px;
+            height: 300px;
+        }
+    
+        .bg-text {
+            font-size: 120px;
+        }
+    
+        .projects-grid {
+            grid-template-columns: 1fr;
+        }
+    
+        .page-title {
+            font-size: 36px;
+        }
+    
+        .header {
+            justify-content: space-between;
+            padding: 15px 20px;
+        }
+    
+        .nav {
+            display: none;
+        }
+    
+        .menu-toggle {
+            display: block;
+        }
+    
+        .mobile-nav {
+            display: flex;
+        }
+    
+        .logo-img {
+            max-height: 32px; 
+        }
     }

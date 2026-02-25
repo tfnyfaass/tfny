@@ -23,6 +23,18 @@
                 <a href="about.html">About</a>
                 <a href="resources/faass-tiffany-resume.pdf" target="_blank">Resume</a>
             </nav>
+            <button class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <nav class="mobile-nav" id="mobileNav">
+                <a href="index.html#projects">Projects</a>
+                <a href="graphic-design.html">Graphic Design</a>
+                <a href="about.html">About</a>
+                <a href="resources/faass-tiffany-resume.pdf" target="_blank">Resume</a>
+            </nav>
         </header>
 
         <main class="grid">
@@ -47,7 +59,31 @@
         </main>
     </div>
    <script>
-    const allCards = document.querySelectorAll('.hover');
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileNav = document.getElementById('mobileNav');
+        
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            mobileNav.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!menuToggle.contains(e.target) && !mobileNav.contains(e.target)) {
+                menuToggle.classList.remove('active');
+                mobileNav.classList.remove('active');
+            }
+        });
+
+        // Close mobile menu when clicking a link
+        mobileNav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                mobileNav.classList.remove('active');
+            });
+        });
+        const allCards = document.querySelectorAll('.hover');
             allCards.forEach(cardElement => {
                 const imgElement = cardElement.querySelector('img');
                 if (imgElement) {
