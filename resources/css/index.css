@@ -494,6 +494,18 @@ body {
     justify-content: center;
 }
 
+#enchante-card .project-image{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+#enchante-card img{
+    width: auto;
+    height: 100%;
+    object-fit: cover;
+}
+
 .project-content {
     padding: 25px;
 }
