@@ -451,6 +451,7 @@ body {
     right: 0;
     bottom: 0;
     z-index: 1; 
+    text-decoration: none;
 }
 
 .project-title a {
@@ -508,6 +509,10 @@ body {
 
 .project-content {
     padding: 25px;
+}
+
+.project-content a{
+    text-decoration: none;
 }
 
 .project-title {
